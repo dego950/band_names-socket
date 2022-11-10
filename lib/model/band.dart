@@ -6,5 +6,8 @@ class Band {
   Band({required this.id, required this.name, required this.votos});
 
   factory Band.fromMap(Map<String, dynamic> obj) =>
-      Band(id: obj['id'], name: obj['name'], votos: obj['votos']);
+      Band(
+          id: obj.containsKey('id') ? obj['id'] : 'no-id',
+          name: obj.containsKey('name') ?obj['name'] : 'no-name',
+          votos: obj.containsKey('name') ?obj['votos'] : 0);
 }
